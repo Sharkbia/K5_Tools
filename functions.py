@@ -2,6 +2,7 @@ import dataclasses
 import random
 import struct
 from tkinter import filedialog
+from tkinter.ttk import Combobox
 from typing import Union, List
 
 from serial import Serial
@@ -721,7 +722,8 @@ def restore_eeprom(serial_port_text: str, window: tk.Tk, progress: ttk.Progressb
         restore_data = fp.read()
 
     if len(restore_data) != target_eeprom_offset:
-        if messagebox.askquestion('提示', f'选择的文件大小为{len(restore_data)}，但目标eeprom大小为{target_eeprom_offset}，是否继续？') == 'no':
+        if messagebox.askquestion('提示',
+                                  f'选择的文件大小为{len(restore_data)}，但目标eeprom大小为{target_eeprom_offset}，是否继续？') == 'no':
             log('用户取消恢复')
             messagebox.showinfo('提示', '用户取消恢复')
             return  # 用户取消恢复，直接返回
@@ -739,3 +741,34 @@ def restore_eeprom(serial_port_text: str, window: tk.Tk, progress: ttk.Progressb
         status_label['text'] = '当前操作: 无'
         serial_utils.reset_radio(serial_port)
         messagebox.showinfo('提示', '写入成功！')
+
+
+def custom_button_function(function: int, serial_port_text: str, window: tk.Tk, progress: ttk.Progressbar,
+                           status_label: tk.Label, eeprom_size: int, firmware_version: int):
+    print(function)
+    function_mapping = {
+        0: lambda: messagebox.showinfo('提示', '请选择所要执行功能'),
+        1: lambda: clean_eeprom(serial_port_text, window, progress, status_label, eeprom_size, firmware_version),
+        2: lambda: auto_write_font(serial_port_text, window, progress, status_label, eeprom_size, firmware_version),
+        3: lambda: read_calibration(serial_port_text, window, progress, status_label),
+        4: lambda: write_calibration(serial_port_text, window, progress, status_label),
+        5: lambda: read_config(serial_port_text, window, progress, status_label),
+        6: lambda: write_config(serial_port_text, window, progress, status_label),
+        7: lambda: write_font_conf(serial_port_text, window, progress, status_label, eeprom_size, firmware_version),
+        8: lambda: write_tone_options(serial_port_text, window, progress, status_label, eeprom_size, firmware_version),
+        9: lambda: write_font(serial_port_text, window, progress, status_label, eeprom_size, firmware_version,
+                              FontType.GB2312_COMPRESSED),
+        10: lambda: write_font(serial_port_text, window, progress, status_label, eeprom_size, firmware_version,
+                               FontType.GB2312_UNCOMPRESSED),
+        11: lambda: write_font(serial_port_text, window, progress, status_label, eeprom_size, firmware_version,
+                               FontType.LOSEHU_FONT),
+        12: lambda: write_pinyin_index(serial_port_text, window, progress, status_label, eeprom_size, firmware_version),
+        13: lambda: write_pinyin_index(serial_port_text, window, progress, status_label, eeprom_size, firmware_version,
+                                       False, True),
+        14: lambda: backup_eeprom(serial_port_text, window, progress, status_label, eeprom_size),
+        15: lambda: restore_eeprom(serial_port_text, window, progress, status_label, eeprom_size),
+        16: lambda: reset_radio(serial_port_text, status_label),
+        17: lambda: None
+    }
+    function_mapping.get(function, lambda: None)()
+    return

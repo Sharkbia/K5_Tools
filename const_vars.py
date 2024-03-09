@@ -31,3 +31,46 @@ class LanguageType(Enum):
     @staticmethod
     def value_list():
         return list(map(lambda i: i.value, LanguageType))
+
+
+custom_button_functions_zh = [
+    '------请选择------',
+    '清空EEPROM',
+    '自动写入字库',
+    '读取校准参数',
+    '写入校准参数',
+    '读取配置参数',
+    '写入配置参数',
+    '写入字库配置',
+    '写入亚音参数',
+    '写入压缩字库',
+    '写入全量字库',
+    '写入字库 (旧)',
+    '写入拼音表（旧）',
+    '写入拼音表（新）',
+    '备份EEPROM',
+    '恢复EEPROM',
+    '重启设备',
+    '测试'
+]
+
+custom_button_functions_en = [
+    '---Please select---',
+    'Clear EEPROM',
+    'Auto write font',
+    'Read calibration',
+    'Write calibration',
+    'Read config',
+    'Write config',
+    'Write font config',
+    'Write tone config',
+    'Write comp font',
+    'Write full font',
+    'Write old font',
+    'Write old index',
+    'Write new index',
+    'Backup EEPROM',
+    'Restore EEPROM',
+    'Reboot device'
+]
+

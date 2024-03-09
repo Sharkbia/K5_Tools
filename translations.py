@@ -9,6 +9,7 @@ translations = {
         'theme_label_text': '主题',
         'serial_port_text': '串口',
         'firmware_label_text': '固件版本',
+        'custom_button_functions_text': '功能',
 
         # Buttons
         'clean_eeprom_button_text': '清空EEPROM',
@@ -27,6 +28,7 @@ translations = {
         'backup_eeprom_button_text': '备份EEPROM',
         'restore_eeprom_button_text': '恢复EEPROM',
         'todo_button_text': '敬请期待',
+        'custom_button_text': '运行',
 
         # Tooltip
         'eeprom_size_combo_tooltip_text': 'EEPROM芯片容量，若自动检测正确则无需修改',
@@ -48,7 +50,23 @@ translations = {
         'backup_eeprom_button_tooltip_text': '备份EEPROM中的数据，使用EEPROM下拉框可以选择所要备份的大小',
         'restore_eeprom_button_tooltip_text': '恢复EEPROM中的数据，使用EEPROM下拉框可以选择所要恢复的大小',
         'todo_button_tooltip_text': '敬请期待',
-        'language_combo_tooltip_text': '更改语言，重启程序生效'
+        'language_combo_tooltip_text': '更改语言，重启程序生效',
+        '清空EEPROM': '清除EEPROM中的所有数据',
+        '自动写入字库': '自动写入机器固件所需字库等文件',
+        '读取校准参数': '校准文件包含硬件参数校准信息，必须备份！建议终身保留以备恢复',
+        '写入校准参数': '校准文件只在更换芯片或清除EEPROM数据后写一次即可',
+        '读取配置参数': '配置文件包含了菜单设置信息、开机字符和信道信息等，如无特别需要可不备份，不同固件的菜单设置可能不通用',
+        '写入配置参数': '配置文件如无特别需要，可以不写',
+        '写入字库配置': '写入字库配置，如果不使用自动写入，请在执行完字库写入后点击',
+        '写入亚音参数': '写入亚音参数，如果不使用自动写入，请在执行完字库写入后点击',
+        '写入压缩字库': '压缩GB2312字库，萝狮虎118K、123H版本及后续版本使用',
+        '写入全量字库': '全量GB2312字库，用于萝狮虎118H版本，后续未使用',
+        '写入字库（旧）': '117版本及之前版本使用，旧字库',
+        '写入拼音表（旧）': '123版本拼音索引，如果不使用自动写入，请在执行完字库写入后点击',
+        '写入拼音表（新）': '124及以上版本拼音索引，如果不使用自动写入，请在执行完字库写入后点击',
+        '备份EEPROM': '备份EEPROM中的数据，使用EEPROM下拉框可以选择所要备份的大小',
+        '恢复EEPROM': '恢复EEPROM中的数据，使用EEPROM下拉框可以选择所要恢复的大小',
+        '重启设备': '手动重启设备',
     },
     LanguageType.ENGLISH: {
         'tool_name': 'K5/K6 Tools',
@@ -57,7 +75,9 @@ translations = {
         'theme_label_text': 'Theme',
         'serial_port_text': 'Serial',
         'firmware_label_text': 'Firmware',
+        'custom_button_functions_text': 'Functions',
 
+        'function_tip_text': 'You have selected',
         'clean_eeprom_button_text': 'Clear EEPROM',
         'auto_write_font_button_text': 'Auto write font',
         'read_calibration_button_text': 'Read calibration',
@@ -74,6 +94,7 @@ translations = {
         'backup_eeprom_button_text': 'Backup EEPROM',
         'restore_eeprom_button_text': 'Restore EEPROM',
         'todo_button_text': 'Coming soon',
+        'custom_button_text': 'Run',
 
         'eeprom_size_combo_tooltip_text': 'EEPROM chip capacity, no need to modify if automatically detected correctly',
         'firmware_combo_tooltip_text': 'Firmware version, no need to modify if automatically detected correctly',
@@ -94,6 +115,22 @@ translations = {
         'backup_eeprom_button_tooltip_text': 'Backup data in EEPROM. Use the EEPROM dropdown to select the size to be backed up.',
         'restore_eeprom_button_tooltip_text': 'Restore data in EEPROM. Use the EEPROM dropdown to select the size to be restored.',
         'todo_button_tooltip_text': 'Coming soon',
-        'language_combo_tooltip_text': 'Change language, take effect after restart.'
+        'language_combo_tooltip_text': 'Change language, take effect after restart.',
+        'Clear EEPROM': 'Clear ALL data in the EEPROM',
+        'Auto write font': 'Automatically write the font library and other files required for machine firmware. If you are unsure about the button next to it, clicking this one is never wrong.',
+        'Read calibration': 'The calibration file contains hardware parameter calibration information, must be backed up! It is recommended to keep it for a lifetime for recovery.',
+        'Write calibration': 'Write the calibration file only once after replacing the chip or clearing EEPROM data.',
+        'Read config': 'The configuration file contains menu settings, boot characters, channel information, etc. It is not necessary to back up if there are no special requirements. Menu settings for different firmware may not be universal.',
+        'Write config': 'You can skip writing the configuration file if not needed.',
+        'Write font config': 'Write font library configuration. If not using automatic writing, click after executing font library writing.',
+        'Write tone config': 'Write t-tone parameters. If not using automatic writing, click after executing font library writing.',
+        'Write comp font': 'Compressed GB2312 font library, used for losehu 118K, 123H versions, and subsequent versions.',
+        'Write full font': 'Full GB2312 font library, used for losehu 118H version and later unused versions.',
+        'Write old font': 'Used for losehu 117 version and earlier versions, old font library.',
+        'Write old index': '123 version Pinyin index. If not using automatic writing, click after executing font library writing.',
+        'Write new index': '124 and later versions Pinyin index. If not using automatic writing, click after executing font library writing.',
+        'Backup EEPROM': 'Backup data in EEPROM. Use the EEPROM dropdown to select the size to be backed up.',
+        'Restore EEPROM': 'Restore data in EEPROM. Use the EEPROM dropdown to select the size to be restored.',
+        'Reboot device': 'Manually restart the device.',
     }
 }
