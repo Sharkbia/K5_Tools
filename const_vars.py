@@ -51,7 +51,8 @@ custom_button_functions_zh = [
     '备份EEPROM',
     '恢复EEPROM',
     '重启设备',
-    '测试'
+    '测试',
+    '写入补丁'
 ]
 
 custom_button_functions_en = [
